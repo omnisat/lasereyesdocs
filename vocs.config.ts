@@ -9,8 +9,8 @@ export default defineConfig({
       link: "/getting-started",
     },
     {
-      text: "Example",
-      link: "/example",
+      text: "The Why",
+      link: "/why",
     },
   ],
   topNav: [
