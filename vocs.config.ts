@@ -56,10 +56,9 @@ export default defineConfig({
       items: [
         [
           {
-            name: "Paradigm",
+            name: "UTXO",
             link: "https://paradigm.xyz",
-            image:
-              "https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/paradigm-light.svg",
+            image: "/utxo.svg",
           },
         ],
       ],
