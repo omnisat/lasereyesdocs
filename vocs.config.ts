@@ -74,6 +74,11 @@ export default defineConfig({
             image: "/utxo.svg",
           },
           {
+            name: "Sat Ventures",
+            link: "https://www.omnisat.io",
+            image: "/satsventure.svg",
+          },
+          {
             name: "Omnisat",
             link: "https://www.omnisat.io",
             image: "/OmnisatTextBlack.svg",
@@ -89,6 +94,33 @@ export default defineConfig({
           {
             name: "CTRL",
             link: "https://seizectrl.io",
+            image: "/LaserEyesIcon.svg",
+          },
+          {
+            name: "Omnisat",
+            link: "https://www.omnisat.io",
+            image: "/LaserEyesIcon.svg",
+          },
+          {
+            name: "Omnisat",
+            link: "https://www.omnisat.io",
+            image: "/LaserEyesIcon.svg",
+          },
+          {
+            name: "Omnisat",
+            link: "https://www.omnisat.io",
+            image: "/LaserEyesIcon.svg",
+          },
+        ],
+        [
+          {
+            name: "CTRL",
+            link: "https://seizectrl.io",
+            image: "/LaserEyesIcon.svg",
+          },
+          {
+            name: "Omnisat",
+            link: "https://www.omnisat.io",
             image: "/LaserEyesIcon.svg",
           },
           {
