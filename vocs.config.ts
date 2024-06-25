@@ -14,18 +14,18 @@ export default defineConfig({
     },
   ],
   topNav: [
-    { text: "Guide & API", link: "/docs" },
+    { text: "Getting Started", link: "/docs/getting-started" },
     { text: "Blog", link: "/blog" },
     {
       text: "Lazer Eyes",
       items: [
         {
           text: "Changelog",
-          link: "https://github.com/wevm/vocs/blob/main/src/CHANGELOG.md",
+          link: "https://github.com/omnisat-foundation/",
         },
         {
           text: "Contributing",
-          link: "https://github.com/wevm/vocs/blob/main/.github/CONTRIBUTING.md",
+          link: "https://github.com/omnisat-foundation/",
         },
       ],
     },
@@ -56,29 +56,50 @@ export default defineConfig({
       items: [
         [
           {
-            name: "UTXO",
-            link: "https://paradigm.xyz",
-            image: "/utxo.svg",
+            name: "CTRL",
+            link: "https://seizectrl.io",
+            image: "/CTRL.svg",
           },
         ],
       ],
     },
     {
-      name: "Large Enterprise",
+      name: "Ecosystem Partner",
       height: 60,
       items: [
         [
           {
-            name: "WalletConnect",
-            link: "https://walletconnect.com",
-            image:
-              "https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/walletconnect-light.svg",
+            name: "UTXO",
+            link: "https://paradigm.xyz",
+            image: "/utxo.svg",
           },
           {
-            name: "Stripe",
-            link: "https://www.stripe.com",
-            image:
-              "https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/stripe-light.svg",
+            name: "Omnisat",
+            link: "https://www.omnisat.io",
+            image: "/OmnisatTextBlack.svg",
+          },
+        ],
+      ],
+    },
+    {
+      name: "Start Ups",
+      height: 30,
+      items: [
+        [
+          {
+            name: "CTRL",
+            link: "https://seizectrl.io",
+            image: "/LaserEyesIcon.svg",
+          },
+          {
+            name: "Omnisat",
+            link: "https://www.omnisat.io",
+            image: "/LaserEyesIcon.svg",
+          },
+          {
+            name: "Omnisat",
+            link: "https://www.omnisat.io",
+            image: "/LaserEyesIcon.svg",
           },
         ],
       ],
