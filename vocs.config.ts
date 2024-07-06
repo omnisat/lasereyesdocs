@@ -107,28 +107,6 @@ export default defineConfig({
             image: "/LaserEyesIcon.svg",
           },
         ],
-        [
-          {
-            name: "CTRL",
-            link: "https://seizectrl.io",
-            image: "/LaserEyesIcon.svg",
-          },
-          {
-            name: "Omnisat",
-            link: "https://www.omnisat.io",
-            image: "/LaserEyesIcon.svg",
-          },
-          {
-            name: "Omnisat",
-            link: "https://www.omnisat.io",
-            image: "/LaserEyesIcon.svg",
-          },
-          {
-            name: "Omnisat",
-            link: "https://www.omnisat.io",
-            image: "/LaserEyesIcon.svg",
-          },
-        ],
       ],
     },
   ],
