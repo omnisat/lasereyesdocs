@@ -50,19 +50,19 @@ export default defineConfig({
     },
   ],
   sponsors: [
-    {
-      name: "Collaborator",
-      height: 120,
-      items: [
-        [
-          {
-            name: "CTRL",
-            link: "https://seizectrl.io",
-            image: "/CTRL.svg",
-          },
-        ],
-      ],
-    },
+    // {
+    //   name: "Collaborator",
+    //   height: 120,
+    //   items: [
+    //     [
+    //       {
+    //         name: "CTRL",
+    //         link: "https://seizectrl.io",
+    //         image: "/CTRL.svg",
+    //       },
+    //     ],
+    //   ],
+    // },
     {
       name: "Ecosystem Partner",
       height: 60,
@@ -77,11 +77,6 @@ export default defineConfig({
             name: "Sat Ventures",
             link: "https://www.omnisat.io",
             image: "/satsventure.svg",
-          },
-          {
-            name: "Omnisat",
-            link: "https://www.omnisat.io",
-            image: "/OmnisatTextBlack.svg",
           },
         ],
       ],
