@@ -50,7 +50,7 @@ export default defineConfig({
     },
   ],
   sponsors: [
-    // {
+    // { commented out
     //   name: "Collaborator",
     //   height: 120,
     //   items: [
