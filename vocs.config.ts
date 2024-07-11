@@ -116,18 +116,7 @@ export default defineConfig({
   },
   theme: {
     accentColor: "#FF701E",
-    variables: {
-      content: {
-        // horizontalPadding: "40px",
-        // verticalPadding: "80px",
-      },
-      color: {
-        background: {
-          light: "white",
-          dark: "#121212",
-        },
-      },
-    },
+    colorScheme: 'dark'
   },
   editLink: {
     pattern: "https://github.com/wevm/viem/edit/main/site/pages/:path",
