@@ -16,7 +16,7 @@ export default defineConfig({
   topNav: [
     { text: "Getting Started", link: "/docs/getting-started" },
     {
-      text: "Lazer Eyes",
+      text: "Laser Eyes",
       items: [
         {
           text: "Changelog",
