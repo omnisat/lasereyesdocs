@@ -6,16 +6,15 @@ export default defineConfig({
   sidebar: [
     {
       text: "Getting Started",
-      link: "/getting-started",
+      link: "/docs/getting-started",
     },
     {
       text: "The Why",
-      link: "/why",
+      link: "/docs/why",
     },
   ],
   topNav: [
     { text: "Getting Started", link: "/docs/getting-started" },
-    { text: "Blog", link: "/blog" },
     {
       text: "Lazer Eyes",
       items: [
