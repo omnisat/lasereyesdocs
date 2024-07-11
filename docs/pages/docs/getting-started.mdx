@@ -2,16 +2,22 @@
 
 ## Laser Eyes
 
-### React Hooks for Bitcoin
+A powerful and flexible npm package for connecting various Bitcoin wallets to your client-side JavaScript and TypeScript applications.
 
-Laser Eyes is a collection of React Hooks containing everything you need to start working with Bitcoin. Laser Eyes makes it easy to "Connect" interface with Bitcoin, Inscriptions, balance information, interact with BRC-20s, and more.
+## Features
 
-## Install
+- Support for multiple Bitcoin wallets: OYL, Unisat, Xverse, and Leather
+- Easy-to-use React context and hooks
+- Network switching between mainnet and testnet
+- Comprehensive wallet operations including balance checking, transaction signing, and message signing
+- TypeScript support
+
+## Installation
 
 :::code-group
 
 ```bash [yarn]
-yarn install @omnisat/lasereyes
+yarn add @omnisat/lasereyes
 ```
 
 ```bash [npm]
@@ -28,56 +34,132 @@ bun i @omnisat/lasereyes
 
 :::
 
-## Usage Overview
+## Quick Start
 
-```typescript
-import { LaserEyesProvider, createConfig } from '@omnisat/lasereyes'
+1. Wrap your app with the `LaserEyesProvider`:
 
-const config = createConfig({
- ...
-})
+```jsx
+import { LaserEyesProvider } from '@omnisat/lasereyes';
 
 function App() {
   return (
-    <LaserEyesProvider config={config}>
-      <Profile />
+    <LaserEyesProvider>
+      {/* Your app components */}
     </LaserEyesProvider>
-  )
+  );
 }
 ```
 
-## How to
+2. Use the `useLaserEyes` hook in your components:
 
-The following hooks support typed inference:
+```jsx
+import { useLaserEyes } from '@omnisat/lasereyes';
 
-## Read Methods
+function WalletConnector() {
+  const { connect, connected, address, balance } = useLaserEyes();
 
-`connect lasereyes.connect()`
+  const handleConnect = () => {
+    connect('unisat'); // or 'oyl', 'xverse', 'leather'
+  };
 
-`Get addresses of current account lasereyes.requestAccounts()`
+  return (
+    <div>
+      {!connected ? (
+        <button onClick={handleConnect}>Connect Wallet</button>
+      ) : (
+        <div>
+          <p>Connected Address: {address}</p>
+          <p>Balance: {balance.total}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+```
 
-`Returns testnet or mainnet lasereyes.getNetwork()`
+## API Reference
 
-`Get public key of account lasereyes.getPublicKey()`
+### LaserEyesProvider
 
-`Get Balance of current account lasereyes.getBalance()`
+The main context provider that should wrap your app.
 
-`Get All inscriptions lasereyes.getInscriptions()`
+### useLaserEyes
 
-`Get All Tokens lasereyes.getAllBRC20Tokens()`
+A hook that provides access to all wallet functions and state. Here are some key properties and methods:
 
-## Write Methods
+- `connected`: Boolean indicating if a wallet is connected
+- `address`: The current wallet address
+- `balance`: Object containing confirmed, unconfirmed, and total balance
+- `network`: Current network (mainnet or testnet)
+- `connect(walletName)`: Connect to a specific wallet
+- `disconnect()`: Disconnect the current wallet
+- `sendBTC(to: string, amount: number)`: Send Bitcoin
+- `signMessage(message: string)`: Sign a message
+- `signPsbt(tx: string, finalize?: boolean, broadcast?: boolean)`: Sign a PSBT
+- `switchNetwork(network: 'mainnet' | 'testnet')`: Switch between networks
 
-Send Bitcoin `lasereyes.sendBTC(toPK, btc_in_sats, ...)`
+## Supported Wallets
 
-Transferable: The amount has been inscribed into one or more TRANSFER inscriptions (can be transferred immediately). Available: The amount that is available as a part of a balance (including both minted and received) but not transferable yet. To spend an available amount, you must first inscribe a certain amount into a TRANSFER inscription.
+- OYL
+- Unisat
+- Xverse
+- Leather (currently disabled in the provided code)
 
-The transfer Amount can be calculated by the sum of the chosen amounts of TRANSFER inscriptions. If you don’t have enough transferable inscriptions, you will need to inscribe them first.
+Each wallet has different capabilities and methods of interaction. The package abstracts these differences to provide a unified API.
 
-Once a number of TRANSFER inscriptions are chosen, proceed to send them by asserting an address sign the tx to send.
+## Network Handling
 
-`Sign a message lasereyes.signMessage(...)`
+The package supports both mainnet and testnet. You can switch networks using the `switchNetwork` function, and check the current network with the `network` property.
 
-`Sign a single PSBT lasereyes.signPsbt(...)`
+## Error Handling
 
-`Sign an array of PSBT lasereyes.signPsbts(...)`
+Most functions in the package are asynchronous and may throw errors. It's recommended to use try-catch blocks when calling these functions:
+
+```javascript
+try {
+  await connect('unisat');
+} catch (error) {
+  console.error('Failed to connect:', error);
+}
+```
+
+## Advanced Usage
+
+### Custom Configuration
+
+You can create a custom configuration using the `createConfig` function:
+
+```javascript
+import { createConfig } from '@omnisat/lasereyes';
+
+const config = createConfig({
+  network: 'testnet',
+  provider: 'unisat',
+  chainId: 1,
+});
+```
+
+### Working with PSBTs
+
+The package provides methods for signing and pushing Partially Signed Bitcoin Transactions (PSBTs):
+
+```javascript
+const psbt = '...'; // Your PSBT string
+const signedPsbt = await signPsbt(psbt, true, false);
+const txId = await pushPsbt(signedPsbt);
+```
+
+## Best Practices
+
+1. Always check if a wallet is connected before performing operations.
+2. Handle network changes gracefully, as they can affect address and balance.
+3. Provide clear feedback to users during wallet operations, as they may require user interaction in the wallet interface.
+4. Always validate user input before sending transactions or signing messages.
+
+## Contributing
+
+Contributions are welcome! Please check out our [Contributing Guide](CONTRIBUTING.md) for more details.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
