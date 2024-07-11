@@ -1,52 +1,65 @@
-# Laser_Eyes
+# Laser Eyes: The Bitcoin Wallet Connector
 
 ## Why: The Problems
 
-Building Bitcoin applications is hard. Apps need to support connecting wallets, managing Taproot addresses, signing messages and data, sending transactions, listening for events and state changes, refreshing stale indexed data, and much more. This is all on top of solving app-specific use-cases and providing polished user experiences.
+Building Bitcoin applications is challenging. Developers need to support multiple wallet connections, manage different address types (including Taproot), handle message and transaction signing, monitor network events, refresh blockchain data, and much more. All of this comes on top of solving app-specific use-cases and creating polished user experiences.
 
-The Bitcoin ecosystem is in its infancy with minimal tooling available. This creates a high barrier of entry for developers, which can stifle innovation and growth. Breaking down this barrier with a simple-to-use wallet connect library like Laser Eyes can foster greater developer adoption, which is vital to the ecosystem's success.
+The Bitcoin ecosystem, despite its age, still lacks comprehensive tooling for developers. This creates a high barrier to entry, potentially stifling innovation and growth. By providing a simple-to-use wallet connection library like Laser Eyes, we can foster greater developer adoption, which is crucial for the ecosystem's success.
 
-With the Bitcoin ecosystem being so new that this offers a perfect time to set standards and create safe and easy-to-use infrastructure. This ensures that when new users come, their exposure to scams and poor user experiences is reduced, which is the current state as every dApp needs to build its own wallet connect system.
+The current state of Bitcoin development often requires each dApp to build its own wallet connection system. This leads to inconsistencies, potential security risks, and poor user experiences. Laser Eyes aims to set standards and create safe, easy-to-use infrastructure, ensuring that as new users enter the space, their exposure to scams and subpar experiences is minimized.
 
-Laser Eyes solves all these problems and more — allowing app developers to focus on building high-quality and performant experiences for Bitcoin — by focusing on developer experience, performance, feature coverage, and stability.
-
-<br />
+Laser Eyes solves these problems by focusing on developer experience, performance, feature coverage, and stability, allowing app developers to concentrate on building high-quality and performant experiences for Bitcoin.
 
 ## Developer Experience with Laser Eyes
 
-Laser Eyes delivers an exceptional developer experience by providing a simple, intuitive wallet connect solution for Bitcoin applications. This allows developers to focus on building high-quality apps without the complexity of managing wallet integrations. Therefore
+Laser Eyes delivers an exceptional developer experience by providing a simple, intuitive wallet connection solution for Bitcoin applications. Here's how it achieves this:
 
-### Key Points
+### Key Features
 
-1. **Simple Wallet Connection**:
-   - Easy integration of Bitcoin wallets, ensuring seamless user experiences.
-2. **Automatic Type Safety and Inference**:
-   - Strongly typed interfaces provide type inference and static validation, reducing errors and enhancing development efficiency.
-3. **Comprehensive Documentation**:
-   - Clear examples and usage information help developers implement wallet connections effectively.
-4. **Intuitive Integration**:
-   - Designed to be easy to use, allowing developers to integrate wallet functionalities without dealing with underlying complexities.
-5. **Learning and Understanding**:
-   - Helps developers learn Bitcoin concepts and wallet interactions, promoting a deeper understanding of the ecosystem.
+1. **Multi-Wallet Support**:
+- Seamlessly integrates with popular Bitcoin wallets like OYL, Unisat, Xverse, and Leather.
+- Provides a unified API across different wallet providers.
+
+2. **React Integration**:
+- Offers a `LaserEyesProvider` for easy context setup.
+- Provides a `useLaserEyes` hook for convenient access to wallet functions and state.
+
+3. **Comprehensive Wallet Operations**:
+- Supports essential operations like balance checking, transaction signing, and message signing.
+- Handles network switching between mainnet and testnet.
+
+4. **TypeScript Support**:
+- Includes strong typing for enhanced developer productivity and code reliability.
+
+5. **Simplified Error Handling**:
+- Provides consistent error handling across different wallet implementations.
 
 ### Benefits
 
 - **Flexibility**:
-  - Adaptable and reusable in different parts of applications.
-- **Enhanced Developer Experience**:
-  - Streamlines development with autocomplete, type inference, and static validation.
-- **Stable and Predictable Integration**:
-  - Documentation and test-driven development ensure stability and reliability.
+- Adaptable to various Bitcoin wallet providers.
+- Easy to integrate into existing React applications.
+
+- **Enhanced Developer Productivity**:
+- Reduces boilerplate code for wallet interactions.
+- Provides a consistent API across different wallets.
+
+- **Improved User Experience**:
+- Enables developers to create seamless wallet interactions in their apps.
+- Supports multiple wallet options, giving users more choice.
 
 ### Fit in the Bitcoin Ecosystem
 
-- **Infancy of Bitcoin Tooling**:
-  - Fills the gap in minimal tooling, providing essential tools for developers.
-- **Breaking Down Barriers**:
-  - Lowers the entry barrier for developers, encouraging more to build on Bitcoin.
-- **Encouraging Adoption**:
-  - Simplifies wallet integration, driving innovation and growth.
-- **Setting Standards**:
-  - Establishes standards and infrastructure, reducing exposure to scams and poor user experiences.
+- **Standardization**:
+- Helps establish consistent patterns for wallet interactions in Bitcoin apps.
+- Reduces fragmentation in wallet connection implementations.
 
-Laser Eyes empowers developers to build high-quality Bitcoin applications, fostering a thriving developer community crucial for the Bitcoin ecosystem's success and growth.
+- **Lowering Entry Barriers**:
+- Simplifies the process of adding wallet functionality to Bitcoin apps.
+- Allows developers to focus on unique features rather than wallet integration.
+
+- **Promoting Best Practices**:
+- Encourages secure and efficient methods for wallet interactions.
+- Helps developers learn about Bitcoin concepts through a well-structured API.
+
+Laser Eyes empowers developers to build high-quality Bitcoin applications more efficiently. By providing a robust, easy-to-use wallet connection solution, it fosters a thriving developer community crucial for the Bitcoin ecosystem's success and growth. Whether you're building a simple Bitcoin app or a complex dApp, Laser Eyes provides the tools you need to integrate wallet functionality quickly and securely.
