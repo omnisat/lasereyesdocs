@@ -12,6 +12,10 @@ export default defineConfig({
       text: "The Why",
       link: "/docs/why",
     },
+    {
+      text: "Contributing",
+      link: "/docs/contributing",
+    }
   ],
   topNav: [
     { text: "Getting Started", link: "/docs/getting-started" },
@@ -19,12 +23,8 @@ export default defineConfig({
       text: "Laser Eyes",
       items: [
         {
-          text: "Changelog",
-          link: "https://github.com/omnisat-foundation/",
-        },
-        {
           text: "Contributing",
-          link: "https://github.com/omnisat-foundation/",
+          link: "/docs/contributing",
         },
       ],
     },
