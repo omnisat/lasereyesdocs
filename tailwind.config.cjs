@@ -2,7 +2,7 @@
 module.exports = {
   content: ["./docs/**/*.{html,md,mdx,tsx,js,jsx}"],
   theme: {
-    darkMode: 'class',
+    darkMode: 'selector',
     extend: {},
   },
   plugins: [],

@@ -8,8 +8,8 @@ logo: false
 
 import { HomePage } from "vocs/components";
 
-<div className="absolute w-full top-0 bottom-0 bg-[url('/colosseum-light.svg')] dark:bg-[url('/modified_pattern.svg')] opacity-30 max-sm:w-[200%] max-sm:-left-[200px] max-sm:hidden">
-  <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent opacity-70" />
+<div className="fixed w-full top-0 left-0 h-full min-h-screen bg-[url('/colosseum-light.svg')] dark:bg-[url('/modified_pattern.svg')] opacity-30 max-sm:w-[200%] max-sm:-left-[200px] max-sm:hidden">
+    <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent opacity-70" />
 </div>
 <div className="max-w-[1120px] mx-auto vp-doc relative px-[24px] mb-[96px] mt-[32px] md:px-0 md:mb-[64px]">
   <div className="pt-[48px] max-sm:pt-0">
@@ -143,32 +143,27 @@ bun i @omnisat/lasereyes
 #
 
 # Overview
+Wrap a top-level component with `LaserEyesProvider`.
 
-```typescript
-import { LaserEyesProvider, createConfig } from '@omnisat/lasereyes'
-
-const config = createConfig({
- ...
-})
-
-function App() {
-  return (
-    <LaserEyesProvider config={config}>
-      <Profile />
-    </LaserEyesProvider>
-  )
-}
+```tsx
+// [!include ~/snippets/app.tsx]
 ```
 
-# Features
 
+Then, use the `useLaserEyes` hook to access the context in any child component.
+```tsx
+// [!include ~/snippets/ConnectWallet.tsx]
+```
+
+Check out <a href={"/docs/getting-started"}>Getting Started</a> for more details.
+
+# Features
 Laser Eyes supports all these features out-of-the-box:
 
 - Abstractions over the [JSON-RPC API](https://ordinals.com/) to make your life easier
 - First-class APIs for interacting with [Ordinal Indexer](https://ordinals.com/)
 
 # Community
-
 Check out the following places for more laser eyes - related content:
 
 - Follow [@0xBunzy](https://twitter.com/0xBunzy), [@Hathbanger](https://twitter.com/hathbenger)
@@ -176,7 +171,6 @@ Check out the following places for more laser eyes - related content:
 - [Share your project/organization](https://github.com/omnisat-foundation/) that uses Laser Eyes
 
 # Support
-
 Help support future development and make laser eyes a sustainable open-source project:
 
 - [GitHub Sponsors](https://github.com/omnisat-foundation/)
