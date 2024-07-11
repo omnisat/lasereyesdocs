@@ -73,7 +73,7 @@ function WalletConnector() {
 
   const handleSendBTC = async () => {
     const recipient = "bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq";
-    const amount = 1000;
+    const amount = 1000; // 😎
     await sendBTC(recipient, amount);
   };
 
@@ -84,7 +84,7 @@ function WalletConnector() {
   };
 
   const handleSignPsbt = async () => {
-    const psbtBase64 = "..."; // Your PSBT base64 string
+    const psbtBase64 = "..."; // Your PSBT as a base64 string
     const tx = await signPsbt(psbtBase64);
     console.log(tx);
   };
