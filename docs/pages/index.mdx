@@ -7,14 +7,18 @@ logo: false
 ---
 
 import { HomePage } from "vocs/components";
+import Container from "../components/container";
+import Test from "../components/test";
+import { useLaserEyes } from "@omnisat/lasereyes";
+import React from "react";
+
+<div className="absolute w-full top-0 left-0 h-[800px] bg-[url('/colosseum-light.svg')] dark:bg-[url('/modified_pattern.svg')] opacity-30">
+  <div className="absolute inset-0 bg-gradient-to-t z-0 from-[#232225] via-transparent to-transparent opacity-100" />
+</div>
 
 <div className={"relative"}>
 
-[//]: # "<div className=\"fixed w-full top-0 left-0 h-full min-h-screen bg-[url('/colosseum-light.svg')] dark:bg-[url('/modified_pattern.svg')] opacity-30 max-sm:w-[200%] max-sm:-left-[200px] max-sm:hidden z-0\">"
-[//]: # ' <div className="absolute inset-0 bg-gradient-to-t z-0 from-[#121212] via-transparent to-transparent opacity-70" />'
-[//]: # "</div>"
-
-<div className="max-w-[1120px] z-50 mx-auto vp-doc relative px-[24px] mb-[96px] mt-[32px] md:px-0 md:mb-[64px]">
+<div className="max-w-[1120px] z-0 mx-auto vp-doc relative px-[24px] mb-[96px] mt-[32px] md:px-0 md:mb-[64px]">
   <div className="pt-[48px] max-sm:pt-0">
     <div className="max-sm:px-0 flex justify-between z-0 max-md:justify-center">
       <div className="space-y-8 max-w-[400px] flex flex-col items-start max-md:items-center">
@@ -137,7 +141,7 @@ Check out [Getting Started](docs/getting-started) for more details.
 
 # Features
 
-Laser Eyes supports all these features out-of-the-box: - Support for multiple Bitcoin wallets: [OYL](https://oyl.io), [Unisat](https://unisat.io), [Xverse](https://xverse.com), and [Leather](https://leather.io) - Easy-to-use React context and hooks - Network switching between mainnet and testnet - Comprehensive wallet operations including balance checking, transaction signing, and message signing - TypeScript support
+Laser Eyes supports all these features out-of-the-box: - Support for multiple Bitcoin wallets: [Unisat](https://unisat.io) - More wallets to come... - Easy-to-use React context and hooks - Network switching between mainnet and testnet - Comprehensive wallet operations including balance checking, transaction signing, and message signing - TypeScript support
 
 # Community
 

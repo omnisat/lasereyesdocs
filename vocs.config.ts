@@ -77,47 +77,49 @@ export default defineConfig({
             link: "https://satsventures.com/",
             image: "/satsventure.svg",
           },
-          {
-            name: "CTRL",
-            link: "https://seizectrl.io",
-            image: "/CTRL.svg",
-          },
+        ],
+        [
           {
             name: "Layer 1 Foundation",
             link: "https://layer1.foundation/",
             image: "/l1f-logo-default.svg",
           },
-        ],
-      ],
-    },
-    {
-      name: "Start Ups",
-      height: 30,
-      items: [
-        [
           {
             name: "CTRL",
             link: "https://seizectrl.io",
-            image: "/LaserEyesIcon.svg",
-          },
-          {
-            name: "Omnisat",
-            link: "https://www.omnisat.io",
-            image: "/LaserEyesIcon.svg",
-          },
-          {
-            name: "Omnisat",
-            link: "https://www.omnisat.io",
-            image: "/LaserEyesIcon.svg",
-          },
-          {
-            name: "Omnisat",
-            link: "https://www.omnisat.io",
-            image: "/LaserEyesIcon.svg",
+            image: "/CTRL.svg",
           },
         ],
       ],
     },
+    // {
+    //   name: "Start Ups",
+    //   height: 30,
+    //   items: [
+    //     [
+    //       {
+    //         name: "CTRL",
+    //         link: "https://seizectrl.io",
+    //         image: "/LaserEyesIcon.svg",
+    //       },
+    //       {
+    //         name: "Omnisat",
+    //         link: "https://www.omnisat.io",
+    //         image: "/LaserEyesIcon.svg",
+    //       },
+    //       {
+    //         name: "Omnisat",
+    //         link: "https://www.omnisat.io",
+    //         image: "/LaserEyesIcon.svg",
+    //       },
+    //       {
+    //         name: "Omnisat",
+    //         link: "https://www.omnisat.io",
+    //         image: "/LaserEyesIcon.svg",
+    //       },
+    //     ],
+    //   ],
+    // },
   ],
   font: {
     default: {
