@@ -15,7 +15,7 @@ export default defineConfig({
     {
       text: "Contributing",
       link: "/docs/contributing",
-    }
+    },
   ],
   topNav: [
     { text: "Getting Started", link: "/docs/getting-started" },
@@ -40,7 +40,7 @@ export default defineConfig({
   socials: [
     {
       icon: "github",
-      link: "https://github.com/omnisat-foundation",
+      link: "https://github.com/omnisat",
     },
 
     {
@@ -116,7 +116,7 @@ export default defineConfig({
   },
   theme: {
     accentColor: "#FF701E",
-    colorScheme: 'dark'
+    colorScheme: "dark",
   },
   editLink: {
     pattern: "https://github.com/wevm/viem/edit/main/site/pages/:path",
