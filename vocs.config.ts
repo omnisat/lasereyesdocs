@@ -69,13 +69,23 @@ export default defineConfig({
         [
           {
             name: "UTXO",
-            link: "https://paradigm.xyz",
+            link: "https://www.utxo.management/",
             image: "/utxo.svg",
           },
           {
             name: "Sat Ventures",
-            link: "https://www.omnisat.io",
+            link: "https://satsventures.com/",
             image: "/satsventure.svg",
+          },
+          {
+            name: "CTRL",
+            link: "https://seizectrl.io",
+            image: "/CTRL.svg",
+          },
+          {
+            name: "Layer 1 Foundation",
+            link: "https://layer1.foundation/",
+            image: "/l1f-logo-default.svg",
           },
         ],
       ],
