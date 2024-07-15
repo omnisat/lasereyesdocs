@@ -1,8 +1,4 @@
-# Get started
-
-## Laser Eyes
-
-A simple npm package for connecting various Bitcoin wallets to your client-side JavaScript and TypeScript applications.
+# Getting Started
 
 ## Installation
 
@@ -31,11 +27,12 @@ bun i @omnisat/lasereyes
 1. Wrap your app with the `LaserEyesProvider`:
 
 ```jsx
-import { LaserEyesProvider } from '@omnisat/lasereyes';
+// note: component MUST NOT be rendered with SSR
+import { LaserEyesProvider, MAINNET } from '@omnisat/lasereyes';
 
 function App() {
   return (
-    <LaserEyesProvider>
+    <LaserEyesProvider config={{ network: MAINNET }}>
       {/* Your app components */}
     </LaserEyesProvider>
   );
@@ -45,7 +42,7 @@ function App() {
 2. Use the `useLaserEyes` hook in your components:
 
 ```jsx
-import { useLaserEyes } from "@omnisat/lasereyes";
+import { useLaserEyes, UNISAT } from "@omnisat/lasereyes";
 
 function WalletConnector() {
   const {
@@ -60,7 +57,7 @@ function WalletConnector() {
   } = useLaserEyes();
 
   const handleConnect = () => {
-    connect("oyl"); // or 'unisat', 'xverse', 'leather'
+    connect(UNISAT);
   };
 
   const handleSendBTC = async () => {
@@ -117,27 +114,135 @@ The main context provider that should wrap your app.
 
 ### useLaserEyes
 
-A hook that provides access to all wallet functions and state. Here are some key properties and methods:
+A hook that provides access to all wallet functions and state. Here are the key properties and methods:
 
-- `connected`: Boolean indicating if a wallet is connected
-- `address`: The current wallet address
-- `balance`: Object containing confirmed, unconfirmed, and total balance
-- `provider`: Current wallet provider (unisat, oyl, xverse, leather)
-- `network`: Current network (mainnet or testnet)
-- `switchNetwork(network: 'mainnet' | 'testnet')`: Switch between networks
-- `connect(walletName: 'oyl' | 'unisat' | 'xverse' | 'leather')`: Connect to a specific wallet
-- `disconnect()`: Disconnect the current wallet
-- `sendBTC(to: string, amount: number)`: Send Bitcoin
-- `signMessage(message: string)`: Sign a message
-- `signPsbt(tx: string, finalize?: boolean, broadcast?: boolean)`: Sign a PSBT
+#### Properties
+
+`connected`: Boolean
+- Indicates if a wallet is currently connected.
+
+`isConnecting`: Boolean
+- Indicates if a wallet connection is in progress.
+
+`address`: String
+- The current wallet address.
+
+`paymentAddress`: String
+- The current wallet payment address (may be different from `address` for some wallet types).
+
+`publicKey`: String
+- The current wallet public key.
+
+`paymentPublicKey`: String
+- The current wallet payment public key (may be different from `publicKey` for some wallet types).
+
+`balance`: Number | undefined
+- The current wallet balance in satoshis. `undefined` if not yet fetched.
+
+`provider`: String | undefined
+- Current wallet provider (e.g., 'unisat'). `undefined` if not connected.
+
+`network`: 'mainnet' | 'testnet'
+- Current network the wallet is connected to.
+
+`accounts`: String[]
+- Array of accounts associated with the connected wallet.
+
+`hasUnisat`: Boolean
+- Indicates if the Unisat wallet is available in the browser.
+
+#### Methods
+
+`connect(walletName: 'unisat'): Promise<void>`
+- Connects to the specified wallet.
+- Input: Wallet name (currently only 'unisat' is supported)
+- Output: Promise that resolves when connection is successful, or rejects with an error.
+
+`disconnect(): void`
+- Disconnects the current wallet.
+- No input or output.
+
+`requestAccounts(): Promise<string[]>`
+- Requests accounts from the connected wallet.
+- Output: Promise that resolves with an array of account addresses.
+
+`getNetwork(): Promise<string | undefined>`
+- Retrieves the current network.
+- Output: Promise that resolves with the network name ('mainnet' or 'testnet'), or `undefined` if not connected.
+
+`switchNetwork(network: 'mainnet' | 'testnet' ): Promise<void>`
+- Switches the wallet to the specified network.
+- Input: Network name ('mainnet' or 'testnet')
+- Output: Promise that resolves when the network switch is complete.
+
+`getPublicKey(): Promise<string>`
+- Retrieves the public key of the connected wallet.
+- Output: Promise that resolves with the public key as a string.
+
+`getBalance(): Promise<string>`
+- Retrieves the current balance of the connected wallet.
+- Output: Promise that resolves with the balance as a string (in satoshis).
+
+`getInscriptions(): Promise<any[]>`
+- Retrieves inscriptions associated with the connected wallet.
+- Output: Promise that resolves with an array of inscription objects.
+
+`sendBTC(to: string, amount: number): Promise<string>`
+- Sends Bitcoin to a specified address.
+- Input:
+`to`: Recipient's Bitcoin address
+`amount`: Amount to send in satoshis
+- Output: Promise that resolves with the transaction ID.
+
+`signMessage(message: string): Promise<string>`
+- Signs a message with the connected wallet.
+- Input: Message to sign
+- Output: Promise that resolves with the signature.
+
+`signPsbt(tx: string, finalize?: boolean, broadcast?: boolean): Promise<{ signedPsbtHex?: string, signedPsbtBase64?: string, txId?: string } | undefined>`
+- Signs a Partially Signed Bitcoin Transaction (PSBT).
+- Input:
+`tx`: PSBT as a hex or base64 string
+`finalize`: (optional) Whether to finalize the PSBT
+`broadcast`: (optional) Whether to broadcast the transaction after signing
+- Output: Promise that resolves with an object containing the signed PSBT in hex and base64 formats, and the transaction ID if broadcast.
+
+`pushPsbt(tx: string): Promise<string | undefined>`
+- Pushes a signed PSBT to the network.
+- Input: Signed PSBT as a string
+- Output: Promise that resolves with the transaction ID.
+
+#### Usage Example
+
+```jsx
+function WalletInfo() {
+  const { connected, address, balance, getInscriptions } = useLaserEyes();
+
+  useEffect(() => {
+    if (connected) {
+      getInscriptions().then(inscriptions => {
+        console.log('Inscriptions:', inscriptions);
+      });
+    }
+  }, [connected, getInscriptions]);
+
+  if (!connected) return <p>Please connect your wallet</p>;
+
+  return (
+    <div>
+      <p>Address: {address}</p>
+      <p>Balance: {balance} satoshis</p>
+    </div>
+  );
+}
+```
+
+This example demonstrates how to use the `useLaserEyes` hook to display wallet information and fetch inscriptions when connected.
 
 
 ## Supported Wallets
 
-- [OYL](https://oyl.io)
 - [Unisat](https://unisat.io)
-- [Xverse](https://xverse.com)
-- [Leather](https://leather.io)
 
 Each wallet has different capabilities and methods of interaction. The package abstracts these differences to provide a unified API.
 
