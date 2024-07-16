@@ -18,7 +18,7 @@ export default defineConfig({
     },
   ],
   topNav: [
-    { text: "Getting Started", link: "/docs/getting-started" },
+    { text: "Docs", link: "/docs/getting-started" },
     { text: "Try It Out", link: "https://demo.lasereyes.build" },
     {
       text: "Laser Eyes",
