@@ -1,6 +1,25 @@
 import { defineConfig } from "vocs";
 
 export default defineConfig({
+  head: (
+    <>
+      <meta property="og:type" content="website" />
+      <meta
+        property="og:title"
+        content="Laser Eyes · Web Hooks For Bitcoin Ordinals"
+      />
+      <meta
+        property="og:image"
+        content="https://lasereyes.build/og-image.png"
+      />
+      <meta property="og:url" content="https://lasereyes.build/" />
+      <meta
+        property="og:description"
+        content="One seamless wallet connect for your Ordinals frontend"
+      />
+    </>
+  ),
+
   title: "Laser Eyes",
   description: "Web Hooks For Bitcoin Ordinals",
   sidebar: [
