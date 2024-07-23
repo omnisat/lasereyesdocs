@@ -6,6 +6,8 @@ function ConnectWallet() {
     <>
       <button onClick={() => connect("unisat")}>Connect Wallet</button>
 
+      <button onClick={() => connect("xverse")}>Connect Wallet</button>
+
       <button onClick={disconnect}>Disconnect Wallet</button>
     </>
   );
