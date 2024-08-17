@@ -93,9 +93,9 @@ export default defineConfig({
             image: "/utxo.svg",
           },
           {
-            name: "Sat Ventures",
-            link: "https://satsventures.com/",
-            image: "/satsventure.svg",
+            name: "OrdinalsBot",
+            link: "https://ordinalsbot.com/",
+            image: "/OrdinalsBot.svg",
           },
         ],
         [
@@ -109,37 +109,27 @@ export default defineConfig({
             link: "https://seizectrl.io",
             image: "/CTRL.svg",
           },
+          {
+            name: "Sat Ventures",
+            link: "https://satsventures.com/",
+            image: "/satsventure.svg",
+          },
         ],
       ],
     },
-    // {
-    //   name: "Start Ups",
-    //   height: 30,
-    //   items: [
-    //     [
-    //       {
-    //         name: "CTRL",
-    //         link: "https://seizectrl.io",
-    //         image: "/LaserEyesIcon.svg",
-    //       },
-    //       {
-    //         name: "Omnisat",
-    //         link: "https://www.omnisat.io",
-    //         image: "/LaserEyesIcon.svg",
-    //       },
-    //       {
-    //         name: "Omnisat",
-    //         link: "https://www.omnisat.io",
-    //         image: "/LaserEyesIcon.svg",
-    //       },
-    //       {
-    //         name: "Omnisat",
-    //         link: "https://www.omnisat.io",
-    //         image: "/LaserEyesIcon.svg",
-    //       },
-    //     ],
-    //   ],
-    // },
+    {
+      name: "Start Ups",
+      height: 30,
+      items: [
+        [
+          {
+            name: "Leather Wallet",
+            link: "https://leather.io/",
+            image: "/Leather.svg",
+          },
+        ],
+      ],
+    },
   ],
   font: {
     default: {
