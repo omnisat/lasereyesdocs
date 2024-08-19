@@ -4,7 +4,9 @@ import ConnectWallet from '@/components/ConnectWallet'
 
 function App() {
     return (
-        <LaserEyesProvider>
+        <LaserEyesProvider config={{
+            network: 'mainnet'
+        }}>
             <ConnectWallet />
         </LaserEyesProvider>
     )
