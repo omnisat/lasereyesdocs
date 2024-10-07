@@ -127,6 +127,11 @@ export default defineConfig({
             link: "https://leather.io/",
             image: "/Leather.svg",
           },
+          {
+            name: "Orange Wallet",
+            link: "https://www.orangecrypto.com/",
+            image: "/OrangeWalletLogo.svg",
+          },
         ],
       ],
     },
