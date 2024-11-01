@@ -105,14 +105,9 @@ export default defineConfig({
             image: "/l1f-logo-default.svg",
           },
           {
-            name: "CTRL",
-            link: "https://seizectrl.io",
-            image: "/CTRL.svg",
-          },
-          {
-            name: "Sat Ventures",
+            name: "Blife",
             link: "https://satsventures.com/",
-            image: "/satsventure.svg",
+            image: "/blife.png",
           },
         ],
       ],
@@ -128,9 +123,19 @@ export default defineConfig({
             image: "/Leather.svg",
           },
           {
+            name: "CTRL",
+            link: "https://seizectrl.io",
+            image: "/CTRL.svg",
+          },
+          {
             name: "Orange Wallet",
             link: "https://www.orangecrypto.com/",
             image: "/OrangeWalletLogo.svg",
+          },
+          {
+            name: "Sat Ventures",
+            link: "https://satsventures.com/",
+            image: "/satsventure.svg",
           },
         ],
       ],
