@@ -28,12 +28,16 @@ export default defineConfig({
       link: "/docs/getting-started",
     },
     {
-      text: "The Why",
-      link: "/docs/why",
+      text: "Connect Wallet",
+      link: "/docs/wallet-connect",
     },
     {
       text: "Contributing",
       link: "/docs/contributing",
+    },
+    {
+      text: "The Why",
+      link: "/docs/why",
     },
   ],
   topNav: [
@@ -143,7 +147,7 @@ export default defineConfig({
   ],
   font: {
     default: {
-      google: "Windows",
+      google: "Inter",
     },
   },
   theme: {
