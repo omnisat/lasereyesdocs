@@ -97,9 +97,9 @@ export default defineConfig({
             image: "/utxo.svg",
           },
           {
-            name: "OrdinalsBot",
-            link: "https://ordinalsbot.com/",
-            image: "/OrdinalsBot.svg",
+            name: "OYL",
+            link: "https://www.oyl.io/",
+            image: "/oyl.svg",
           },
         ],
         [
@@ -130,16 +130,6 @@ export default defineConfig({
             name: "CTRL",
             link: "https://seizectrl.io",
             image: "/CTRL.svg",
-          },
-          {
-            name: "Orange Wallet",
-            link: "https://www.orangecrypto.com/",
-            image: "/OrangeWalletLogo.svg",
-          },
-          {
-            name: "Sat Ventures",
-            link: "https://satsventures.com/",
-            image: "/satsventure.svg",
           },
         ],
       ],
