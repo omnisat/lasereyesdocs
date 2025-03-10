@@ -110,6 +110,13 @@ export default defineConfig({
             image: "/blife.png",
           },
         ],
+        [
+          {
+            name: "Maestro",
+            link: "https://www.gomaestro.org/",
+            image: "/maestro-dark.svg",
+          },
+        ],
       ],
     },
     {
